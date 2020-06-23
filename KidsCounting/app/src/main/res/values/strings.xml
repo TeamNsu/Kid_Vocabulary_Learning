@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KidsCounting</string>
+    <string name="text1">Click to Play Sounds</string>
+    <string name="text2">Counting</string>
+</resources>
