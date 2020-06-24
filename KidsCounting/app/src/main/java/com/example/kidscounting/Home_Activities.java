@@ -45,11 +45,14 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
+
         if(view == counting123){
             Intent intent = new Intent(Home_Activities.this,MainActivity.class);
             startActivity(intent);
             finish();
-        }if(view == AppleCount){
+        }
+
+        if(view == AppleCount){
             Intent intent = new Intent(Home_Activities.this,AppleCount_activity.class);
             startActivity(intent);
             finish();

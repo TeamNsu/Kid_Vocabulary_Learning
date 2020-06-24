@@ -19,8 +19,8 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_marginLeft="150dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="1.2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/number_counting_title"
@@ -28,8 +28,9 @@
             />
 
         <ImageButton
-            android:layout_weight="2"
-            android:layout_marginLeft="95dp"
+            android:layout_weight="2.8"
+            android:padding="2dp"
+            android:layout_marginLeft="140dp"
             android:id="@+id/imageButtonX"
             style="@android:style/Holo.ButtonBar"
             android:layout_width="match_parent"

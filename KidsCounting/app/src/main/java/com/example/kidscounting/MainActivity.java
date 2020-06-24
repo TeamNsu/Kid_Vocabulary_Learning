@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound1.start();
            }
         }
+
         if (view == two ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             two.startAnimation(animation);
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
               sound2.start();
            }
         }
+
         if (view == three ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             three.startAnimation(animation);
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound3.start();
            }
         }
+
         if (view == four ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             four.startAnimation(animation);
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound4.start();
            }
         }
+
         if (view == five ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             five.startAnimation(animation);
@@ -107,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound5.start();
            }
         }
+
         if (view == six ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             six.startAnimation(animation);
@@ -114,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
               sound6.start();
            }
         }
+
         if (view == seven ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             seven.startAnimation(animation);
@@ -121,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound7.start();
            }
         }
+
         if (view == eight ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             eight.startAnimation(animation);
@@ -128,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound8.start();
            }
         }
+
         if (view == nine ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             nine.startAnimation(animation);
@@ -135,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound9.start();
            }
         }
+
         if (view == ten ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             ten.startAnimation(animation);
@@ -142,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                sound10.start();
            }
         }
+
         if (view == cross_btn){
             Fade_Animation();
             Intent intent = new Intent(MainActivity.this,Home_Activities.class);
@@ -154,19 +164,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.fade);
             cross_btn.startAnimation(animation);
             }
-
-         /**public void Blink_Animation(){
-             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
-             two.startAnimation(animation);
-             three.startAnimation(animation);
-             four.startAnimation(animation);
-             five.startAnimation(animation);
-             six.startAnimation(animation);
-             seven.startAnimation(animation);
-             eight.startAnimation(animation);
-             nine.startAnimation(animation);
-             ten.startAnimation(animation);
-         }*/
-
-
     }
