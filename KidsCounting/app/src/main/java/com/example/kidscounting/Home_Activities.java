@@ -73,7 +73,7 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
         @Override
         public void run() {
             Start_Animation();
-            handler.postDelayed(this,2000);
+            handler.postDelayed(this,1800);
 
         }
     };

@@ -25,7 +25,7 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
                         imageButton7, imageButton8, imageButton9, imageButton10, repeat, cross_btn, mute;
     private ImageView AppleShow;
     private MediaPlayer sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9,sound10;
-    private int state=1;
+    private int state = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,7 +171,7 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
             }
 
         if (view == mute) {
-            if(state==0){
+            if(state == 0){
                 Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
                 mute.startAnimation(animation);
                 mute.setImageResource(R.drawable.btn_mute);
@@ -210,6 +210,12 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
                 sound10 = MediaPlayer.create(this, R.raw.ten);
                 state=state-1;
             }
+        }
+
+        if (view == repeat){
+
+
+
         }
     }
 
