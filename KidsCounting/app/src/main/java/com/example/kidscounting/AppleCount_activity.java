@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -26,6 +27,8 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
     private ImageView AppleShow;
     private MediaPlayer sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9,sound10;
     private int state = 1;
+    private Handler handler = new Handler();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,7 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
         mute.setOnClickListener(this);
         repeat.setOnClickListener(this);
         cross_btn.setOnClickListener(this);
+
     }
 
     @Override
@@ -208,21 +212,163 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
                 sound8 = MediaPlayer.create(this, R.raw.eight);
                 sound9 = MediaPlayer.create(this, R.raw.nine);
                 sound10 = MediaPlayer.create(this, R.raw.ten);
+                Toast.makeText(getApplicationContext(),"Sound Unmuted",Toast.LENGTH_SHORT).show();
                 state=state-1;
             }
         }
 
         if (view == repeat){
+            Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+            repeat.startAnimation(animation);
 
-
+            handler.postDelayed(Task1_Runnable,1500);
+            handler.postDelayed(Task2_Runnable,3000);
+            handler.postDelayed(Task3_Runnable,4500);
+            handler.postDelayed(Task4_Runnable,6000);
+            handler.postDelayed(Task5_Runnable,7500);
+            handler.postDelayed(Task6_Runnable,9000);
+            handler.postDelayed(Task7_Runnable,10500);
+            handler.postDelayed(Task8_Runnable,12000);
+            handler.postDelayed(Task9_Runnable,13500);
+            handler.postDelayed(Task10_Runnable,15000);
 
         }
     }
-
     public void Fade_Animation(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.fade);
         cross_btn.startAnimation(animation);
     }
 
+    private Runnable Task1_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task1();
+        }
+    };
+    private Runnable Task2_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task2();
+        }
+    };
+    private Runnable Task3_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task3();
+        }
+    };
+    private Runnable Task4_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task4();
+        }
+    };
+    private Runnable Task5_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task5();
+        }
+    };
+    private Runnable Task6_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task6();
+        }
+    };
+    private Runnable Task7_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task7();
+        }
+    };
+    private Runnable Task8_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task8();
+        }
+    };
+    private Runnable Task9_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task9();
+        }
+    };
+    private Runnable Task10_Runnable = new Runnable() {
+        @Override
+        public void run() {
+            Task10();
+        }
+    };
+
+    public void Task1(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton1.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_1);
+        if (sound1 != null){
+        sound1.start();}
+    }
+    public void Task2(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton2.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_2);
+        if (sound2 != null){
+        sound2.start();}
+    }
+    public void Task3(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton3.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_3);
+        if (sound3 != null){
+        sound3.start();}
+    }
+    public void Task4(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton4.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_4);
+        if (sound4 != null){
+        sound4.start();}
+    }
+    public void Task5(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton5.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_5);
+        if (sound5 != null){
+        sound5.start();}
+    }
+    public void Task6(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton6.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_6);
+        if (sound6 != null){
+        sound6.start();}
+    }
+    public void Task7(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton7.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_7);
+        if (sound7 != null){
+        sound7.start();}
+    }
+    public void Task8(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton8.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_8);
+        if (sound8 != null){
+        sound8.start();}
+    }
+    public void Task9(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton9.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_9);
+        if (sound9 != null){
+        sound9.start();}
+    }
+    public void Task10(){
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
+        imageButton10.startAnimation(animation);
+        AppleShow.setImageResource(R.drawable.object_10);
+        if (sound10 != null){
+        sound10.start();}
+    }
 }
 
