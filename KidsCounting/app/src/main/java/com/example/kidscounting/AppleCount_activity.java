@@ -183,7 +183,8 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
                       ||sound9==null||sound10==null){
                   Toast.makeText(getApplicationContext(),"Sound Muted",Toast.LENGTH_SHORT).show();
                   state=state+1;
-              } else {
+              }
+              else {
                   Toast.makeText(getApplicationContext(),"Sound Muted",Toast.LENGTH_SHORT).show();
                   sound1.stop();
                   sound2.stop();

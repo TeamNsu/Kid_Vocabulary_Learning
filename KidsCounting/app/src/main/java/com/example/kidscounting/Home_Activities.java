@@ -1,11 +1,9 @@
 package com.example.kidscounting;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -15,7 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 public class Home_Activities extends AppCompatActivity implements View.OnClickListener {
-     private ImageButton counting123,AppleCount;
+     private ImageButton counting123,AppleCount,puzzleGame;
      private Handler handler = new Handler();
 
     @Override
@@ -32,10 +30,12 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
         // always open in Landscape mode
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        puzzleGame = findViewById(R.id.puzzle_game_btn);
         counting123 = findViewById(R.id.Counting123_button);
         AppleCount = findViewById(R.id.AppleCount_button);
         counting123.setOnClickListener(this);
         AppleCount.setOnClickListener(this);
+        puzzleGame.setOnClickListener(this);
 
         // Start_Animation();
         Animation_Runnable.run();
@@ -57,6 +57,11 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
             finish();
         }
+        if(view == puzzleGame){
+            Intent intent = new Intent(Home_Activities.this, Puzzle_game_Activity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
@@ -67,6 +72,7 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
         animation.setInterpolator(bounce_animation_interpolator);
         counting123.startAnimation(animation);
         AppleCount.startAnimation(animation);
+        puzzleGame.startAnimation(animation);
     }
 
     private Runnable Animation_Runnable = new Runnable() {
