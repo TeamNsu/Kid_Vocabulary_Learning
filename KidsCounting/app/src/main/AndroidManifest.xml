@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splashScreen"
+            android:name=".SplashScreen"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,18 +19,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".NumberCount123_Activity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Home_Activities"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".AppleCount_activity"
+            android:name=".AppleCount_Activity"
             android:screenOrientation="landscape" />
         <activity android:name=".Puzzle_game_Activity"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".Pop"
+        <activity android:name=".PopUp_Window"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.CustomTheme">
         </activity>

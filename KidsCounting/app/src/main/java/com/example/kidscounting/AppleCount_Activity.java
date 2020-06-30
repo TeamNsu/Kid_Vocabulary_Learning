@@ -1,13 +1,10 @@
 package com.example.kidscounting;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -17,16 +14,17 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
-public class AppleCount_activity extends AppCompatActivity implements View.OnClickListener {
+public class AppleCount_Activity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6,
                         imageButton7, imageButton8, imageButton9, imageButton10, repeat, cross_btn, mute;
     private ImageView AppleShow;
     private MediaPlayer sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9,sound10;
     private int state = 1;
+    private int state_repeat =1;
+    private ArrayList<MediaPlayer> soundList = new ArrayList<>();
     private Handler handler = new Handler();
 
 
@@ -79,7 +77,7 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
     public void onClick(View view) {
         if (view == cross_btn){
             Fade_Animation();
-            Intent intent = new Intent(AppleCount_activity.this,Home_Activities.class);
+            Intent intent = new Intent(AppleCount_Activity.this,Home_Activities.class);
             startActivity(intent);
             finish();
         }
@@ -233,8 +231,10 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
             handler.postDelayed(Task9_Runnable,13500);
             handler.postDelayed(Task10_Runnable,15000);
 
+
         }
     }
+
     public void Fade_Animation(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.fade);
         cross_btn.startAnimation(animation);
@@ -304,72 +304,93 @@ public class AppleCount_activity extends AppCompatActivity implements View.OnCli
     public void Task1(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton1.startAnimation(animation);
+        repeat.setEnabled(false);
         AppleShow.setImageResource(R.drawable.object_1);
         if (sound1 != null){
-        sound1.start();}
+            sound1.start();}
     }
     public void Task2(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton2.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_2);
         if (sound2 != null){
-        sound2.start();}
+            sound2.start();}
     }
     public void Task3(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton3.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_3);
         if (sound3 != null){
-        sound3.start();}
+            sound3.start();}
     }
     public void Task4(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton4.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_4);
         if (sound4 != null){
-        sound4.start();}
+            sound4.start();}
     }
     public void Task5(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton5.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_5);
         if (sound5 != null){
-        sound5.start();}
+            sound5.start();}
     }
     public void Task6(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton6.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_6);
         if (sound6 != null){
-        sound6.start();}
+            sound6.start();}
     }
     public void Task7(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton7.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_7);
         if (sound7 != null){
-        sound7.start();}
+            sound7.start();}
     }
     public void Task8(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton8.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_8);
         if (sound8 != null){
-        sound8.start();}
+            sound8.start();}
     }
     public void Task9(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton9.startAnimation(animation);
         AppleShow.setImageResource(R.drawable.object_9);
         if (sound9 != null){
-        sound9.start();}
+            sound9.start();}
     }
     public void Task10(){
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide);
         imageButton10.startAnimation(animation);
+        repeat.setEnabled(true);
         AppleShow.setImageResource(R.drawable.object_10);
         if (sound10 != null){
-        sound10.start();}
+            sound10.start();}
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(sound1!=null||sound2!=null||sound3!=null||sound4!=null||sound5!=null||sound6!=null||sound7!=null||sound8!=null
+                ||sound9!=null||sound10!=null){
+        sound1.stop();
+        sound2.stop();
+        sound3.stop();
+        sound4.stop();
+        sound5.stop();
+        sound6.stop();
+        sound7.stop();
+        sound8.stop();
+        sound9.stop();
+        sound10.stop();}
+
+
     }
 }
 

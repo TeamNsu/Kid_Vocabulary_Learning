@@ -30,9 +30,12 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
         // always open in Landscape mode
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        // finding all button
         puzzleGame = findViewById(R.id.puzzle_game_btn);
         counting123 = findViewById(R.id.Counting123_button);
         AppleCount = findViewById(R.id.AppleCount_button);
+
+        // set onClick Listener
         counting123.setOnClickListener(this);
         AppleCount.setOnClickListener(this);
         puzzleGame.setOnClickListener(this);
@@ -47,13 +50,13 @@ public class Home_Activities extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
 
         if(view == counting123){
-            Intent intent = new Intent(Home_Activities.this,MainActivity.class);
+            Intent intent = new Intent(Home_Activities.this, NumberCount123_Activity.class);
             startActivity(intent);
             finish();
         }
 
         if(view == AppleCount){
-            Intent intent = new Intent(Home_Activities.this,AppleCount_activity.class);
+            Intent intent = new Intent(Home_Activities.this, AppleCount_Activity.class);
             startActivity(intent);
             finish();
         }

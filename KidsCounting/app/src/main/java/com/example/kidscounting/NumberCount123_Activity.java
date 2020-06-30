@@ -7,13 +7,12 @@ import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class NumberCount123_Activity extends AppCompatActivity implements View.OnClickListener {
      private ImageButton one,two,three,four,five,six,seven,eight,nine,ten,cross_btn;
      private MediaPlayer sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9,sound10;
     @Override
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view == one ){
+        if (view.getId() == R.id.imageButton1 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             one.startAnimation(animation);
            if (sound1 != null){
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == two ){
+        if (view.getId() == R.id.imageButton2 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             two.startAnimation(animation);
            if (sound2 != null){
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == three ){
+        if (view.getId() == R.id.imageButton3 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             three.startAnimation(animation);
            if (sound3 != null){
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == four ){
+        if (view.getId() == R.id.imageButton4 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             four.startAnimation(animation);
            if (sound4 != null){
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == five ){
+        if (view.getId() == R.id.imageButton5 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             five.startAnimation(animation);
            if (sound5 != null){
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == six ){
+        if (view.getId() == R.id.imageButton6 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             six.startAnimation(animation);
            if (sound6 != null){
@@ -120,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == seven ){
+        if (view.getId() == R.id.imageButton7 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             seven.startAnimation(animation);
            if (sound7 != null){
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == eight ){
+        if (view.getId() == R.id.imageButton8 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             eight.startAnimation(animation);
            if (sound8 != null){
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == nine ){
+        if (view.getId() == R.id.imageButton9 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             nine.startAnimation(animation);
            if (sound9 != null){
@@ -144,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == ten ){
+        if (view.getId() == R.id.imageButton10 ){
             Animation animation = AnimationUtils.loadAnimation(this,R.anim.blink);
             ten.startAnimation(animation);
            if (sound10 != null){
@@ -152,9 +151,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            }
         }
 
-        if (view == cross_btn){
+        if (view.getId() == R.id.imageButtonX){
             Fade_Animation();
-            Intent intent = new Intent(MainActivity.this,Home_Activities.class);
+            Intent intent = new Intent(NumberCount123_Activity.this,Home_Activities.class);
             startActivity(intent);
             finish();
             }

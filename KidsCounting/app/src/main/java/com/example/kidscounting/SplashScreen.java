@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
-public class splashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressBar;
     private int progress;
     @Override
@@ -53,7 +53,7 @@ public class splashScreen extends AppCompatActivity {
     }
 
     public void Start_Home_Activities(){
-        Intent intent = new Intent(splashScreen.this,Home_Activities.class);
+        Intent intent = new Intent(SplashScreen.this,Home_Activities.class);
         startActivity(intent);
         finish();
     }
